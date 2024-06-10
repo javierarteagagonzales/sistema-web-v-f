@@ -8,8 +8,8 @@ import '../../App.css';
 
 //navegation
 import Navigation from "../../components/Navigation";
-import Home from "../Home";
-import A5 from "../A5";
+
+
 
 export default function AcabadoPage() {
 /* popup */
