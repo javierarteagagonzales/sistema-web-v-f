@@ -2,16 +2,11 @@ import React from 'react'
 import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 
-
-//estilos
-import { styled } from '@mui/material/styles';
 
 //navegation
 import Navigation from "../../components/Navigation";
-import A5 from "../A5";
 
 
 import DenseTable from "../../components/acabados/tabla-et";
