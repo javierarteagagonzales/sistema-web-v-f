@@ -55,32 +55,34 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },[]);*/
   
 
-      const [acabados, setAcabados] = useState([]);
+    /*  const [acabado, setAcabado] = useState([]);
       useEffect(() => {
         const obtenerAcabados = async () => {
             try {
                 const response = await getAllData();
-                setAcabados(response.data);
+                setAcabado(response.data);
             } catch (error) {
-                console.error('Error al obtener acabados:', error);
+                {console.error('Error al obtener acabados:', error);}
             }
         };
     
         obtenerAcabados();
-    }, []);
+    }, []); */
   
-      /*useEffect(() => {
+    const [acabado, setAcabado] = useState([]);
+
+      useEffect(() => {
           const obtenerAcabados = async () => {
               try {
-                  const response = await axios.get('https://sistema-web-v.onrender.com/sistema/acabados');
-                  setAcabados(response.data);
+                  const response = await axios.get('https://sistema-web-v.onrender.com/sistema/acabado');
+                  setAcabado(response.data);
               } catch (error) {
                   console.error('Error al obtener acabados:', error);
               }
           };
   
           obtenerAcabados();
-      }, []);*/
+      }, []);
 
     return (
 
@@ -97,7 +99,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     </StyledTableRow>
     </TableHead>
     <TableBody>
-    {acabados.map((acabado, index) => (
+    {acabado.map((acabado, index) => (
     <StyledTableRow key={index} >
     <StyledTableCell >{acabado.id}</StyledTableCell>
     <StyledTableCell >{acabado.nombre}</StyledTableCell>
