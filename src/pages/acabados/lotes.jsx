@@ -3,15 +3,11 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 
-
-
 //navegation
 import Navigation from "../../components/Navigation";
 
-
 import DenseTable from "../../components/acabados/tabla-et";
 import DenseTable1 from '../../components/acabados/tabla-aca';
-
 
 export default function LotesPage() {
 

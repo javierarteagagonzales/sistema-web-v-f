@@ -1,8 +1,5 @@
 import React from 'react'
 
-
-
-
 // tablas
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
