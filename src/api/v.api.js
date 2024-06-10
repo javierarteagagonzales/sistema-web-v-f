@@ -1,5 +1,8 @@
 import axios from 'axios'
 
-export const getAllData = () => {
-    return axios.get('https://sistema-web-v.onrender.com/')
-}
+const API_URL = process.env.https://sistema-web-v-f.vercel.app/;
+export const getAllData = axios.create({
+    baseURL: API_URL,
+});
+
+export default axiosInstance;
