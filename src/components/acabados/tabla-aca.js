@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { getAllData } from '../../api/v.api'
+import axios from 'axios';
 
 // tablas
 import Table from '@mui/material/Table';
@@ -42,7 +43,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
   export default function DenseTable1() {
 
-    const [acabado, setAcabado] = useState([]);
+   /* const [acabado, setAcabado] = useState([]);
 
 
     useEffect(() => {
@@ -51,8 +52,35 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
         setAcabado(res.data);
       }
       loadData();
-    },[]);
+    },[]);*/
+  
 
+      const [acabados, setAcabados] = useState([]);
+      useEffect(() => {
+        const obtenerAcabados = async () => {
+            try {
+                const response = await getAllData();
+                setAcabados(response.data);
+            } catch (error) {
+                console.error('Error al obtener acabados:', error);
+            }
+        };
+    
+        obtenerAcabados();
+    }, []);
+  
+      /*useEffect(() => {
+          const obtenerAcabados = async () => {
+              try {
+                  const response = await axios.get('https://sistema-web-v.onrender.com/sistema/acabados');
+                  setAcabados(response.data);
+              } catch (error) {
+                  console.error('Error al obtener acabados:', error);
+              }
+          };
+  
+          obtenerAcabados();
+      }, []);*/
 
     return (
 
@@ -69,8 +97,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     </StyledTableRow>
     </TableHead>
     <TableBody>
-    {acabado.map(acabado => (
-    <StyledTableRow >
+    {acabados.map((acabado, index) => (
+    <StyledTableRow key={index} >
     <StyledTableCell >{acabado.id}</StyledTableCell>
     <StyledTableCell >{acabado.nombre}</StyledTableCell>
     </StyledTableRow>
