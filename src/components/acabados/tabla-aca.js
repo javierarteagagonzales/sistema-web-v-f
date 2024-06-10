@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { getAllData } from '../../api/v.api'
+import { getAllData } from '../../api/v.api';
 import axios from 'axios';
 
 // tablas
