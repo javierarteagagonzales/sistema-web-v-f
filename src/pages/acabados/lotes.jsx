@@ -23,7 +23,7 @@ useEffect(() => {
   // Simula la carga de datos
   setTimeout(() => {
     setLoading(false);
-  }, 1000); // Tiempo de espera simulado de 3 segundos
+  }, 1500); // Tiempo de espera simulado de 3 segundos
 }, []);
 
 
