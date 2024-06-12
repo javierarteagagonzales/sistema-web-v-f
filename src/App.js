@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route, BrowserRouter} from "react-router-dom"
+import {Routes, Route, HashRouter} from "react-router-dom"
 import Home from "./pages/Home"
 import A1 from "./pages/A1"
 import A2 from "./pages/A2"
@@ -49,7 +49,7 @@ import Transito3Page from './pages/transito/3';
 export default function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" exact element={<Home />}></Route>
           <Route path="/area1" exact element={<A1 />}></Route>
@@ -96,7 +96,7 @@ export default function App() {
         <Route path="/transito/3" element={<Transito3Page />} />
 
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
