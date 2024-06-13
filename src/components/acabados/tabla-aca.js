@@ -101,7 +101,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     <TableBody>
     {acabado.map((acabado, index) => (
     <StyledTableRow key={index} >
-    <StyledTableCell >{acabado.id}</StyledTableCell>
+    <StyledTableCell >{acabado.id_acabado}</StyledTableCell>
     <StyledTableCell >{acabado.nombre}</StyledTableCell>
     </StyledTableRow>
   ))}
