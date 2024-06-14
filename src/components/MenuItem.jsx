@@ -14,9 +14,8 @@ export default function MenuItem({ item, navigate, open }) {
   const handleClick = () => {
     if (item.subItems.length > 0) {
       setSubOpen(!subOpen);
-    } else {
-      navigate(item.path);
     }
+    navigate(item.path);
   };
 
   return (
@@ -59,7 +58,10 @@ export default function MenuItem({ item, navigate, open }) {
                     fontSize: '10px',
                     color: '#555555',
                   }}
-                  onClick={() => navigate(subItem.path)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(subItem.path);
+                  }}
                 >
                   <ListItemText primary={subItem.text} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>
