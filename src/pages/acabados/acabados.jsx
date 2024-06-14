@@ -3,13 +3,13 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import '../../App.css';
 
 //navegation
 import Navigation from "../../components/Navigation";
 
-
+import ListaAcabados from "../../components/acabados/AcabadoList";
 
 export default function AcabadoPage() {
 /* popup */
@@ -50,6 +50,9 @@ const togglePopup = () => {
           </div>
         </div>
       )}
+    </div>
+    <div className="App">
+      <ListaAcabados />
     </div>
 
 
