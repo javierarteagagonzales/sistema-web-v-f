@@ -3,7 +3,7 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../App.css';
 
 //navegation
@@ -18,6 +18,8 @@ const [showPopup, setShowPopup] = useState(false);
 const togglePopup = () => {
   setShowPopup(!showPopup);
 };
+
+
 
   return (
     <>
@@ -49,6 +51,7 @@ const togglePopup = () => {
         </div>
       )}
     </div>
+
 
 
       </Box>
