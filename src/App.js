@@ -52,13 +52,13 @@ export default function App() {
       <HashRouter>
         <Routes>
           <Route path="/" exact element={<Home />}></Route>
-          <Route path="/area1" exact element={<A1 />}></Route>
-          <Route path="/area2" exact element={<A2 />}></Route>
-          <Route path="/area3" exact element={<A3 />}></Route>
-          <Route path="/area4" exact element={<A4 />}></Route>
+          <Route path="/almacencentral" exact element={<A1 />}></Route>
+          <Route path="/corte" exact element={<A2 />}></Route>
+          <Route path="/confeccion" exact element={<A3 />}></Route>
+          <Route path="/transito" exact element={<A4 />}></Route>
           <Route path="/acabados" exact element={<A5 />}></Route>
-          <Route path="/area6" exact element={<A6 />}></Route>
-          <Route path="/area7" exact element={<A7 />}></Route>
+          <Route path="/calidad" exact element={<A6 />}></Route>
+          <Route path="/pcp" exact element={<A7 />}></Route>
 
 
           {/* Almacén Central */}

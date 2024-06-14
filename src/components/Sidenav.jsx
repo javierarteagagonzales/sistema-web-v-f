@@ -90,7 +90,7 @@ export default function Sidenav() {
     {
       text: 'Almacén Central',
       icon: <InventoryIcon />,
-      path: '/area1',
+      path: '/almacencentral',
       subItems: [
         { text: 'Resumen', path: '/almacencentral/resumen' },
         { text: 'Solicitud', path: '/almacencentral/solicitud' },
@@ -101,7 +101,7 @@ export default function Sidenav() {
     {
       text: 'Corte',
       icon: <ContentCutIcon />,
-      path: '/area2',
+      path: '/corte',
       subItems: [
         { text: 'Detalles de lote', path: '/corte/detalle' },
         { text: 'Órdenes de trabajo', path: '/corte/orden' },
@@ -110,7 +110,7 @@ export default function Sidenav() {
     {
       text: 'Confección',
       icon: <CheckroomIcon />,
-      path: '/area3',
+      path: '/confeccion',
       subItems: [
         { text: 'Orden de trabajo', path: '/confeccion/orden' },
         { text: 'Plan de confección', path: '/confeccion/plan' },
@@ -120,7 +120,7 @@ export default function Sidenav() {
     {
       text: 'Almacén de tránsito',
       icon: <DirectionsTransitIcon />,
-      path: '/area4',
+      path: '/transito',
       subItems: [
         { text: '1', path: '/transito/1' },
         { text: '2', path: '/transito/2' },
@@ -139,7 +139,7 @@ export default function Sidenav() {
     {
       text: 'Inspección de Calidad',
       icon: <GradingIcon />,
-      path: '/area6',
+      path: '/calidad',
       subItems: [
         { text: 'Tipo 1', path: '/calidad/tipo-1' },
         { text: 'Tipo 2', path: '/calidad/tipo-2' },
@@ -149,7 +149,7 @@ export default function Sidenav() {
     {
       text: 'PCP',
       icon: <DeveloperBoardIcon />,
-      path: '/area7',
+      path: '/pcp',
       subItems: [
         { text: 'Programar producción', path: '/pcp/programar' },
         { text: 'Controlar producción', path: '/pcp/controlar' },
