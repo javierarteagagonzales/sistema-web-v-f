@@ -18,7 +18,7 @@ import DirectionsTransitIcon from '@mui/icons-material/DirectionsTransit';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import GradingIcon from '@mui/icons-material/Grading';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppStore } from '../appStore';
 import MenuItem from './MenuItem';
 
@@ -73,6 +73,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function Sidenav() {
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
   const updateOpen = useAppStore((state) => state.updateOpen);
   const open = useAppStore((state) => state.dopen);
 
@@ -171,7 +172,7 @@ export default function Sidenav() {
         <Divider />
         <List>
           {menuItems.map((item, index) => (
-            <MenuItem key={index} item={item} navigate={navigate} open={open} />
+            <MenuItem key={index} item={item} navigate={navigate} open={open} currentPath={location.pathname} />
           ))}
         </List>
       </Drawer>

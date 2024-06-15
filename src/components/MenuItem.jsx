@@ -8,7 +8,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import List from '@mui/material/List';
 
-export default function MenuItem({ item, navigate, open }) {
+export default function MenuItem({ item, navigate, open, currentPath }) {
   const [subOpen, setSubOpen] = useState(false);
 
   const handleClick = () => {
@@ -17,6 +17,8 @@ export default function MenuItem({ item, navigate, open }) {
     }
     navigate(item.path);
   };
+
+  const isActive = currentPath === item.path || item.subItems.some(subItem => currentPath === subItem.path);
 
   return (
     <>
@@ -28,7 +30,11 @@ export default function MenuItem({ item, navigate, open }) {
             px: 2.5,
             fontWeight: 'bold',
             fontSize: '16px',
-            color: '#000',
+            color: isActive ? '#881C62' : '#000',
+            backgroundColor: isActive ? '#F4EDF2' : 'transparent',
+            '&:hover': {
+              backgroundColor: '#F4EDF2',
+            }
           }}
         >
           <ListItemIcon
@@ -48,25 +54,32 @@ export default function MenuItem({ item, navigate, open }) {
       {item.subItems.length > 0 && (
         <Collapse in={subOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {item.subItems.map((subItem, subIndex) => (
-              <ListItem key={subIndex} disablePadding sx={{ pl: 4 }}>
-                <ListItemButton
-                  sx={{
-                    maxHeight: 32,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 4,
-                    fontSize: '10px',
-                    color: '#555555',
-                  }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(subItem.path);
-                  }}
-                >
-                  <ListItemText primary={subItem.text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            {item.subItems.map((subItem, subIndex) => {
+              const isSubItemActive = currentPath === subItem.path;
+              return (
+                <ListItem key={subIndex} disablePadding sx={{ pl: 4 }}>
+                  <ListItemButton
+                    sx={{
+                      maxHeight: 32,
+                      justifyContent: open ? 'initial' : 'center',
+                      px: 4,
+                      fontSize: '10px',
+                      color: isSubItemActive ? '#881C62' : '#555555',
+                      backgroundColor: isSubItemActive ? '#F4EDF2' : 'transparent',
+                      '&:hover': {
+                        backgroundColor: '#F4EDF2',
+                      }
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(subItem.path);
+                    }}
+                  >
+                    <ListItemText primary={subItem.text} sx={{ opacity: open ? 1 : 0 }} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
           </List>
         </Collapse>
       )}
