@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
-
+import { Button } from '@mui/material';
 //navegation
 import Navigation from "../../components/Navigation";
+import { useNavigate } from 'react-router-dom';
 
 import DenseTable from "../../components/acabados/tabla-et";
 import DenseTable1 from '../../components/acabados/tabla-aca';
@@ -27,7 +28,11 @@ useEffect(() => {
 }, []);
 
 
+const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate('/acabados/lotes/reporte');
+  };
 
   return (
 
@@ -71,11 +76,17 @@ useEffect(() => {
     </div>
     <div><DenseTable /> </div>
     <div><DenseTable1 /> </div>
+    <div>
+    <Button variant="contained" color="primary" onClick={handleClick}>
+      Ir a Reporte
+    </Button></div>
      </>
     )}
     </Box> 
-    </Box>
 
+    
+    </Box>
+    
     </>
   )
 }

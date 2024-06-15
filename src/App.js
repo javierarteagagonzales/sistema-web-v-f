@@ -12,6 +12,8 @@ import A7 from "./pages/A7"
 // Acabados
 import AcabadoPage from './pages/acabados/acabados';
 import LotesPage from './pages/acabados/lotes';
+import Reporte from './pages/acabados/reporte';
+
 
 // Almacén Central
 import SolicitudPage from './pages/almacencentral/solicitud';
@@ -61,9 +63,10 @@ export default function App() {
           <Route path="/pcp" exact element={<A7 />}></Route>
 
 
-          {/* Almacén Central */}
+          {/* Acabados */}
           <Route path="/acabados/acabados" element={<AcabadoPage />} />
           <Route path="/acabados/lotes" element={<LotesPage />} />
+          <Route path="/acabados/lotes/reporte" element={<Reporte />} />
 
           {/* Almacén Central */}
           <Route path="/almacencentral/solicitud" element={<SolicitudPage />} />
