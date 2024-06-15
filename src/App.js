@@ -14,6 +14,7 @@ import AcabadoPage from './pages/acabados/acabados';
 import LotesPage from './pages/acabados/lotes';
 import Reporte from './pages/acabados/reporte';
 import Detalle from './pages/acabados/detalle';
+import CajaOp from './pages/acabados/caja-operario';
 
 
 
@@ -70,6 +71,7 @@ export default function App() {
           <Route path="/acabados/lotes" element={<LotesPage />} />
           <Route path="/acabados/lotes/reporte" element={<Reporte />} />
           <Route path="/acabados/lotes/detalle" element={<Detalle />} />
+          <Route path="/acabados/acabados/caja-operario" element={<CajaOp />} />
 
           {/* Almacén Central */}
           <Route path="/almacencentral/solicitud" element={<SolicitudPage />} />
