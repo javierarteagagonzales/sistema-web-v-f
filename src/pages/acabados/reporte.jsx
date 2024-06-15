@@ -8,6 +8,9 @@ import { Button, Box } from "@mui/material";
 import Navigation from "../../components/Navigation";
 import TablaReporte from "../../components/acabados/tabla-reporte";
 
+import Bot from "../../components/acabados/bot";
+
+
 import { TextField, Grid } from "@mui/material";
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
 
@@ -64,20 +67,23 @@ export default function Reporte() {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: "#881C62", color: "white" }}
                   >
                     Buscar
                   </Button></Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: "green", color: "white" }}
                   >
                     Imprimir
                   </Button></Grid>
+                  <Grid item xs={1}>
+                  <Bot />
+                  </Grid>
                 
               </Grid>
               <Box>

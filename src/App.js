@@ -13,6 +13,8 @@ import A7 from "./pages/A7"
 import AcabadoPage from './pages/acabados/acabados';
 import LotesPage from './pages/acabados/lotes';
 import Reporte from './pages/acabados/reporte';
+import Detalle from './pages/acabados/detalle';
+
 
 
 // Almacén Central
@@ -67,6 +69,7 @@ export default function App() {
           <Route path="/acabados/acabados" element={<AcabadoPage />} />
           <Route path="/acabados/lotes" element={<LotesPage />} />
           <Route path="/acabados/lotes/reporte" element={<Reporte />} />
+          <Route path="/acabados/lotes/detalle" element={<Detalle />} />
 
           {/* Almacén Central */}
           <Route path="/almacencentral/solicitud" element={<SolicitudPage />} />
