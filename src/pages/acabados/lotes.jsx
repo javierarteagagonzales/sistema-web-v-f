@@ -12,6 +12,7 @@ import DenseTable from "../../components/acabados/tabla-et";
 import DenseTable1 from "../../components/acabados/tabla-aca";
 
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
+import LoteEntradaVista from '../../components/acabados/LoteEntradaVista';
 
 export default function LotesPage() {
   //Skeleton
@@ -79,6 +80,10 @@ export default function LotesPage() {
               <div>
                 <DenseTable1 />{" "}
               </div>
+              <div className="App">
+            <LoteEntradaVista />
+        </div>
+
               <div>
                 <Box display="flex" justifyContent="flex-end" mt={2}>
                   <Button
