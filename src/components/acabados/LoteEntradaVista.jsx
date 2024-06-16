@@ -43,7 +43,7 @@ const LoteEntradaVista = () => {
     const [rowsPerPage, setRowsPerPage] = useState(15);
 
     useEffect(() => {
-        fetch('/api/lote-entrada-vista/')
+        fetch('https://sistema-web-v.onrender.com/sistema/lote-entrada-vista/')
             .then(response => response.json())
             .then(data => {
                 setData(data);
