@@ -1,45 +1,78 @@
 // LoteEntradaVista.js
 import React, { useEffect, useState } from 'react';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Paper,
+    Container,
+    Typography,
+    CircularProgress,
+} from '@mui/material';
 
 const LoteEntradaVista = () => {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
-        fetch('https://sistema-web-v.onrender.com/sistema/lote-entrada-vista/')
+        fetch('/api/lote-entrada-vista/')
             .then(response => response.json())
-            .then(data => setData(data))
-            .catch(error => console.error('Error fetching data:', error));
+            .then(data => {
+                setData(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            });
     }, []);
 
+    if (loading) {
+        return (
+            <Container>
+                <Typography variant="h4" gutterBottom>
+                    Vista Lote Entrada
+                </Typography>
+                <CircularProgress />
+            </Container>
+        );
+    }
+
     return (
-        <div>
-            <h1>Vista Lote Entrada</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID Entrada</th>
-                        <th>Fecha Entrada</th>
-                        <th>ID Tipo Lote</th>
-                        <th>Cantidad</th>
-                        <th>ID Dim Confeccion</th>
-                        <th>ID Guia Confeccion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map(item => (
-                        <tr key={item.id_entrada}>
-                            <td>{item.id_entrada}</td>
-                            <td>{item.fecha_entrada}</td>
-                            <td>{item.id_tipo_lote}</td>
-                            <td>{item.cantidad}</td>
-                            <td>{item.id_dim_confeccion}</td>
-                            <td>{item.id_guia_confeccion}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <Container>
+            <Typography variant="h4" gutterBottom>
+                Vista Lote Entrada
+            </Typography>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>ID Entrada</TableCell>
+                            <TableCell>Fecha Entrada</TableCell>
+                            <TableCell>ID Tipo Lote</TableCell>
+                            <TableCell>Cantidad</TableCell>
+                            <TableCell>ID Dim Confección</TableCell>
+                            <TableCell>ID Guía Confección</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {data.map(item => (
+                            <TableRow key={item.id_entrada}>
+                                <TableCell>{item.id_entrada}</TableCell>
+                                <TableCell>{new Date(item.fecha_entrada).toLocaleString()}</TableCell>
+                                <TableCell>{item.id_tipo_lote}</TableCell>
+                                <TableCell>{item.cantidad}</TableCell>
+                                <TableCell>{item.id_dim_confeccion}</TableCell>
+                                <TableCell>{item.id_guia_confeccion}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Container>
     );
 };
 
