@@ -46,7 +46,7 @@ export default function DenseTable1() {
     const obtenerAcabados = async () => {
       try {
         const response = await axios.get(
-          "https://sistema-web-v.onrender.com/sistema/acabado"
+          "https://sistema-web-v.onrender.com/sistema/acabados"
         );
         setAcabado(response.data);
       } catch (error) {
