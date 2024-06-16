@@ -9,9 +9,13 @@ import {
     TableRow,
     Paper,
     Container,
-    Typography,
+    Typography, Grid ,
     CircularProgress,
     TablePagination,
+    MenuItem,
+    Select,
+    FormControl,
+    InputLabel,
 } from '@mui/material';
 
 import { tableCellClasses } from "@mui/material/TableCell";
@@ -41,9 +45,10 @@ const LoteEntradaVista = () => {
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(15);
+    const [selectedIdEntrada, setSelectedIdEntrada] = useState('');
 
     useEffect(() => {
-        fetch('https://sistema-web-v.onrender.com/sistema/lote-entrada-vista/')
+        fetch('/api/lote-entrada-vista/')
             .then(response => response.json())
             .then(data => {
                 setData(data);
@@ -64,6 +69,15 @@ const LoteEntradaVista = () => {
         setPage(0);
     };
 
+    const handleChangeIdEntrada = (event) => {
+        setSelectedIdEntrada(event.target.value);
+        setPage(0);
+    };
+
+    const filteredData = selectedIdEntrada
+        ? data.filter(item => item.id_entrada === selectedIdEntrada)
+        : data;
+
     if (loading) {
         return (
             <Container>
@@ -77,7 +91,28 @@ const LoteEntradaVista = () => {
 
     return (
         <Container>
-            <TableContainer component={Paper}>
+            <Grid container spacing={3} alignItems="center" sx={{ padding: 2 }}>
+            <Grid item xs={3}>
+            <FormControl fullWidth>
+                <InputLabel id="select-id-entrada-label">ID Entrada</InputLabel>
+                <Select
+                    labelId="select-id-entrada-label"
+                    value={selectedIdEntrada}
+                    onChange={handleChangeIdEntrada}
+                    label="ID Entrada"
+                >
+                    <MenuItem value="">
+                        <em>No Data</em>
+                    </MenuItem>
+                    {data.map(item => (
+                        <MenuItem key={item.id_entrada} value={item.id_entrada}>
+                            {item.id_entrada}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+</Grid></Grid>
+            <TableContainer component={Paper} style={{ marginTop: '20px' }}>
                 <Table stickyHeader>
                     <TableHead>
                         <StyledTableRow>
@@ -90,7 +125,7 @@ const LoteEntradaVista = () => {
                         </StyledTableRow>
                     </TableHead>
                     <TableBody>
-                        {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
+                        {filteredData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
                             <StyledTableRow key={item.id_entrada}>
                                 <StyledTableCell>{item.id_entrada}</StyledTableCell>
                                 <StyledTableCell>{new Date(item.fecha_entrada).toLocaleString()}</StyledTableCell>
@@ -106,7 +141,7 @@ const LoteEntradaVista = () => {
             <TablePagination
                 rowsPerPageOptions={[5, 10, 15, 25, 50]}
                 component="div"
-                count={data.length}
+                count={filteredData.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onPageChange={handleChangePage}
