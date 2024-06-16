@@ -38,30 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function DenseTable1() {
-  /* const [acabado, setAcabado] = useState([]);
 
-
-    useEffect(() => {
-      async function loadData() {
-        const res = await getAllData();
-        setAcabado(res.data);
-      }
-      loadData();
-    },[]);*/
-
-  /*  const [acabado, setAcabado] = useState([]);
-      useEffect(() => {
-        const obtenerAcabados = async () => {
-            try {
-                const response = await getAllData();
-                setAcabado(response.data);
-            } catch (error) {
-                {console.error('Error al obtener acabados:', error);}
-            }
-        };
-    
-        obtenerAcabados();
-    }, []); */
 
   const [acabado, setAcabado] = useState([]);
 
@@ -119,19 +96,6 @@ export default function DenseTable1() {
                 </Button>
                 
                 <AsignarCajaSalida open={popupOpen} onClose={handleClosePopup} />
-                
-               {/* {popupOpen && (
-              <div className="overlay"><AsignarCajaSalida />
-                <div className="popup">
-                <AsignarCajaSalida />
-                  <button onClick={togglePopup}>X</button>
-                  <h2>Asignar Operario</h2>
-                  <p>Contenido del popup...</p>
-                  
-                </div>
-              </div>
-            )}*/}
-                {/* Botón asignar */}
               </StyledTableCell>
             </StyledTableRow>
           ))}
