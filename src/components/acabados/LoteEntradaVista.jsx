@@ -11,11 +11,10 @@ import {
     Container,
     Typography,
     CircularProgress,
+    TablePagination,
 } from '@mui/material';
 
 import { tableCellClasses } from "@mui/material/TableCell";
-
-//estilos
 import { styled } from "@mui/material/styles";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -32,16 +31,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
   "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
 
-
 const LoteEntradaVista = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(15);
 
     useEffect(() => {
         fetch('/api/lote-entrada-vista/')
@@ -55,6 +54,15 @@ const LoteEntradaVista = () => {
                 setLoading(false);
             });
     }, []);
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+    };
 
     if (loading) {
         return (
@@ -70,7 +78,7 @@ const LoteEntradaVista = () => {
     return (
         <Container>
             <TableContainer component={Paper}>
-                <Table>
+                <Table stickyHeader>
                     <TableHead>
                         <StyledTableRow>
                             <StyledTableCell>ID Entrada</StyledTableCell>
@@ -82,7 +90,7 @@ const LoteEntradaVista = () => {
                         </StyledTableRow>
                     </TableHead>
                     <TableBody>
-                        {data.map(item => (
+                        {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
                             <StyledTableRow key={item.id_entrada}>
                                 <StyledTableCell>{item.id_entrada}</StyledTableCell>
                                 <StyledTableCell>{new Date(item.fecha_entrada).toLocaleString()}</StyledTableCell>
@@ -95,6 +103,15 @@ const LoteEntradaVista = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+            <TablePagination
+                rowsPerPageOptions={[5, 10, 15, 25, 50]}
+                component="div"
+                count={data.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+            />
         </Container>
     );
 };
