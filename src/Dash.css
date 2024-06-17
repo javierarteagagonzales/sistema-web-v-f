@@ -34,3 +34,8 @@
     display: grid; 
     place-items: center;
 }
+.acabadoc{
+  display: grid;
+  place-items: center;
+  background-color: #565678;
+}

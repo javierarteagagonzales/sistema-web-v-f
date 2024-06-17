@@ -4,7 +4,7 @@ import { Box, Typography, Link } from '@mui/material';
 
 const Garea = () => {
   return (
-    <Box className="nos-container" sx={{ padding: 8, backgroundColor: '#f0f0f0', borderRadius: 2, boxShadow: 3, maxWidth: 800, margin: '0 auto' }}>
+    <Box className="nos-container" sx={{ padding: 8, backgroundColor: '#f0f0f0', borderRadius: 2, boxShadow: 3, maxWidth: '95%', margin: '0 auto' }}>
   <Typography variant="h4" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
     Datos generales
   </Typography>
@@ -13,7 +13,7 @@ const Garea = () => {
       Title-1
     </Typography>
     <Typography variant="body1" color="textSecondary" sx={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. in voluptate velit esse cillum dolore
     </Typography>
   </Box>
   <Box component="section">
