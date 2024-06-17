@@ -52,26 +52,55 @@ export default function Home() {
                 </Card>
               </Stack>*/}
 
-              
               <div>
                 <Nos />
               </div>
             </Grid>
             <Grid item xs={4}>
               <Stack spacing={2}>
-                <Card sx={{ maxWidth: 345 }}>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Estadist
-                    </Typography>
+                <Card sx={{ maxWidth: 345 }} >
+                  <CardContent className="card1">
+                    <Stack spacing={2} direction="row">
+                      <div className="estadis">
+                        <span className="javier-est1">Corte</span><br/>
+                        <span className="javier-est2">300 Mil</span><br/>
+                        <span className="javier-est3">prendas/mes</span>
+                      </div>
+                    </Stack>
                   </CardContent>
                 </Card>
                 <Card sx={{ maxWidth: 345 }}>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Estadist
-                    </Typography>
+                  <CardContent className="card2">
+                  <Stack spacing={2} direction="row">
+                      <div className="estadis">
+                        <span className="javier-est1a">Costura</span><br/>
+                        <span className="javier-est2a">300 Mil</span><br/>
+                        <span className="javier-est3">prendas/mes</span>
+                      </div>
+                    </Stack>
                   </CardContent>
+                  <Card sx={{ maxWidth: 345 }} >
+                  <CardContent className="card3">
+                    <Stack spacing={2} direction="row">
+                      <div className="estadis">
+                        <span className="javier-est1">Proceso de acabado</span><br/>
+                        <span className="javier-est2">300 Mil</span><br/>
+                        <span className="javier-est3">prendas/mes</span>
+                      </div>
+                    </Stack>
+                  </CardContent>
+                </Card>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardContent className="card4">
+                  <Stack spacing={2} direction="row">
+                      <div className="estadis">
+                        <span className="javier-est1a">Hangteado</span><br/>
+                        <span className="javier-est2a">300 Mil</span><br/>
+                        <span className="javier-est3">prendas/mes</span>
+                      </div>
+                    </Stack>
+                  </CardContent>
+                </Card>
                 </Card>
               </Stack>
             </Grid>
