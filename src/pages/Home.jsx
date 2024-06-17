@@ -20,7 +20,7 @@ export default function Home() {
         <Sidenav />
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          
+          <h1>Home</h1>
           <Typography paragraph>Bienvenido al sistema Usuario</Typography>
 
           <Grid container spacing={2}>
