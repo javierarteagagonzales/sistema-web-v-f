@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </Grid>
             <Grid item xs={4}>
-              <Stack spacing={2}>
+              <Stack spacing={4}>
                 <Card sx={{ maxWidth: 345 }} >
                   <CardContent className="card1">
                     <Stack spacing={2} direction="row">
