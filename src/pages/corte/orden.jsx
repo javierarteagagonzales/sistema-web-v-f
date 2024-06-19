@@ -2,7 +2,9 @@ import React from 'react'
 import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+//navegation
+import Navigation from "../../components/Navigation";
+import Tabla from "../../components/corte/tabla";
 
 export default function OrdenCortePage() {
   return (
@@ -14,9 +16,11 @@ export default function OrdenCortePage() {
       
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
        <h1>Área de Corte</h1> 
-        <Typography paragraph>
-          resumen
-        </Typography>
+       <div>
+            <Navigation />{" "}
+          </div>
+        <h3>Orden de producción</h3>
+        <Tabla />
       </Box>
 
     </Box>

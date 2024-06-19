@@ -36,8 +36,14 @@ import OrdenConfeccionPage from './pages/confeccion/orden';
 import PlanPage from './pages/confeccion/plan';
 
 // Corte
-import DetallePage from './pages/corte/detalle';
 import OrdenCortePage from './pages/corte/orden';
+import OperarioCortePage from './pages/corte/operario';
+import ActividadesPage from './pages/corte/actividades';
+import CorteLotePage from './pages/corte/corte-lote';
+import DetallePage from './pages/corte/detalle';
+import ActividadesMaquinaPage from './pages/corte/actividadesmaquina';
+import LotesCortePage from './pages/corte/lotes';
+import CortesPage from './pages/corte/corte';
 
 // PCP
 import ControlarPage from './pages/pcp/controlar';
@@ -90,8 +96,14 @@ export default function App() {
         <Route path="/confeccion/plan" element={<PlanPage />} />
         
         {/* Corte */}
-        <Route path="/corte/detalle" element={<DetallePage />} />
+        <Route path="/corte/operario" element={<OperarioCortePage />} />
+        <Route path="/corte/operario/actividades" element={<ActividadesPage />} />
+        <Route path="/corte/operario/corte-lote" element={<CorteLotePage />} />
         <Route path="/corte/orden" element={<OrdenCortePage />} />
+        <Route path="/corte/detalle" element={<DetallePage />} />
+        <Route path="/corte/detalle/actividadesmaquina" element={<ActividadesMaquinaPage />} />
+        <Route path="/corte/detalle/lotes" element={<LotesCortePage />} />
+        <Route path="/corte/detalle/corte" element={<CortesPage />} />
         
         {/* PCP */}
         <Route path="/pcp/controlar" element={<ControlarPage />} />

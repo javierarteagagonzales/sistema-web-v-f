@@ -104,8 +104,22 @@ export default function Sidenav() {
       icon: <ContentCutIcon />,
       path: '/corte',
       subItems: [
-        { text: 'Detalles de lote', path: '/corte/detalle' },
-        { text: 'Órdenes de trabajo', path: '/corte/orden' },
+        { text: 'Órdenes de producción', path: '/corte/orden' },
+        { text: 'Operario corte', path: '/corte/operario' ,
+          subItems: [
+          { text: 'Actividades', path: '/corte/operario/actividades' },
+          { text: 'Corte - Lote', path: '/corte/operario/corte-lote' },
+        ]
+        },
+        { text: 'Detalles corte', path: '/corte/detalle'
+          ,
+          subItems: [
+          { text: 'Actividades - Máquina', path: '/corte/detalle/actividadesmaquina' },
+          { text: 'Lotes', path: '/corte/detalle/lotes' },
+          { text: 'Cortes x Op', path: '/corte/detalle/corte' },
+        ]
+         },
+
       ]
     },
     {
