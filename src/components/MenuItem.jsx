@@ -26,10 +26,10 @@ const SubMenuItem = ({ subItem, navigate, open, currentPath }) => {
       <ListItem disablePadding sx={{ display: 'block' }} onClick={handleSubClick}>
         <ListItemButton
           sx={{
-            minHeight: 32,
+            maxHeight: 32,
             justifyContent: open ? 'initial' : 'center',
             px: 4,
-            fontSize: '10px',
+            fontSize: '8px',
             color: isSubItemActive ? '#881C62' : '#555555',
             backgroundColor: isSubItemActive ? '#F4EDF2' : 'transparent',
             '&:hover': {
@@ -51,7 +51,7 @@ const SubMenuItem = ({ subItem, navigate, open, currentPath }) => {
               }}>
                 <ListItemButton
                   sx={{
-                    minHeight: 32,
+                    maxHeight: 28,
                     justifyContent: open ? 'initial' : 'center',
                     px: 4,
                     fontSize: '10px',
@@ -91,11 +91,11 @@ export default function MenuItem({ item, navigate, open, currentPath }) {
       <ListItem disablePadding sx={{ display: 'block' }} onClick={handleClick}>
         <ListItemButton
           sx={{
-            minHeight: 48,
+            minHeight: 40,
             justifyContent: open ? 'initial' : 'center',
             px: 2.5,
             fontWeight: 'bold',
-            fontSize: '16px',
+            fontSize: '14px',
             color: isActive ? '#881C62' : '#000',
             backgroundColor: isActive ? '#F4EDF2' : 'transparent',
             '&:hover': {
