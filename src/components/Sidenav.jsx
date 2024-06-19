@@ -118,7 +118,7 @@ export default function Sidenav() {
           { text: 'Lotes', path: '/corte/detalle/lotes' },
           { text: 'Cortes x Op', path: '/corte/detalle/corte' },
         ]
-         },
+        },
 
       ]
     },
