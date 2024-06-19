@@ -2,11 +2,11 @@ import React from "react";
 import Sidenav from "../../components/Sidenav";
 import Navbar from "../../components/Navbar";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 //navegation
 import Navigation from "../../components/Navigation";
+import TablaCortesLotes from "../../components/corte/tablacortes";
 
-export default function CortesPage() {
+export default function CortePage() {
   return (
     <>
       <Navbar />
@@ -17,10 +17,12 @@ export default function CortesPage() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <h1>Área de Corte</h1>
           <div>
-            <Navigation />{" "}
+            <Navigation />
           </div>
-          <Typography paragraph>resumen</Typography>
+          <h3>Número de cortes por el orden alfabético</h3>
+          <TablaCortesLotes />
         </Box>
+        
       </Box>
     </>
   );
