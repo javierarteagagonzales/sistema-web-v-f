@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Sidenav from "../../components/Sidenav";
 import Navbar from "../../components/Navbar";
 import { Button, Box } from "@mui/material";
+import DraggableDialog from "../../components/acabados/popupimp";
+
 
 //navegation
 import Navigation from "../../components/Navigation";
@@ -10,11 +12,20 @@ import TablaReporte from "../../components/acabados/tabla-reporte";
 
 import Bot from "../../components/acabados/bot";
 
-
 import { TextField, Grid } from "@mui/material";
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
 
 export default function Reporte() {
+  /* popup */
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   //Skeleton
   const [loading, setLoading] = useState(true);
 
@@ -42,7 +53,12 @@ export default function Reporte() {
                 <Navigation />
               </div>
 
-              <Grid container spacing={3} alignItems="center" sx={{ padding: 2 }}>
+              <Grid
+                container
+                spacing={3}
+                alignItems="center"
+                sx={{ padding: 2 }}
+              >
                 <Grid item xs={3}>
                   <TextField
                     id="date-start"
@@ -73,18 +89,21 @@ export default function Reporte() {
                     sx={{ backgroundColor: "#881C62", color: "white" }}
                   >
                     Buscar
-                  </Button></Grid>
-                  <Grid item xs={2}>
+                  </Button>
+                </Grid>
+                <Grid item xs={2}>
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: "green", color: "white" }}
+                    onClick={handleClickOpen}
                   >
                     Imprimir
-                  </Button></Grid>
-                  <Grid item xs={1}>
+                  </Button>
+                  <DraggableDialog open={open} handleClose={handleClose} />
+                </Grid>
+                <Grid item xs={1}>
                   <Bot />
-                  </Grid>
-                
+                </Grid>
               </Grid>
               <Box>
                 <TablaReporte />

@@ -8,8 +8,8 @@ import { Button } from "@mui/material";
 import Navigation from "../../components/Navigation";
 import { useNavigate } from "react-router-dom";
 
-import DenseTable from "../../components/acabados/tabla-et";
-import DenseTable1 from "../../components/acabados/tabla-aca";
+//import DenseTable from "../../components/acabados/tabla-et";
+//import DenseTable1 from "../../components/acabados/tabla-aca";
 
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
 import LoteEntradaVista from "../../components/acabados/LoteEntradaVista";
@@ -77,12 +77,12 @@ export default function LotesPage() {
               <div className="App">
                 <LoteEntradaVista />
               </div>
-              <div>
+              {/*<div>
                 <DenseTable />{" "}
               </div>
               <div>
                 <DenseTable1 />{" "}
-              </div>
+              </div>*/}
               
 
               <div>
