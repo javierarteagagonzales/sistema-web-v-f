@@ -1,27 +1,32 @@
-import React from "react";
-import Sidenav from "../../components/Sidenav";
-import Navbar from "../../components/Navbar";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import React from 'react'
+import Sidenav from '../../components/Sidenav'
+import Navbar from '../../components/Navbar'
+import Box from '@mui/material/Box';
 //navegation
 import Navigation from "../../components/Navigation";
+import TablaAct from "../../components/corte/tablaact";
 
-export default function ActividadesPage() {
+export default function OrdenCortePage() {
   return (
     <>
-      <Navbar />
-      <Box height={30} />
-      <Box sx={{ display: "flex" }}>
-        <Sidenav />
-
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <h1>Área de Corte</h1>
-          <div>
+    <Navbar />
+    <Box height={30}/>
+    <Box sx={{ display: 'flex' }}>
+      <Sidenav/>
+      
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+       <h1>Área de Corte</h1> 
+       <div>
             <Navigation />{" "}
           </div>
-          <Typography paragraph>resumen</Typography>
-        </Box>
+        <h3>Actividades que debe realizar la máquina en el día</h3>
+        <TablaAct />
       </Box>
+
+    </Box>
+      
+    
+      
     </>
-  );
+  )
 }
