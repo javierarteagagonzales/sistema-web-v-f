@@ -1,4 +1,5 @@
 import React from "react";
+import { useState} from "react";
 
 // tablas
 import Table from "@mui/material/Table";
@@ -8,6 +9,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import DraggableDialog from "../../components/corte/comp/tab";
+import { Button} from "@mui/material";
+//import TablaReporte1 from "./comp/tab";
 
 import TablePagination from "@mui/material/TablePagination";
 
@@ -46,6 +50,19 @@ export default function TablaActMaq() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  /* popup */
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   return (
     <Paper sx={{ width: "90%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -65,7 +82,16 @@ export default function TablaActMaq() {
               <StyledTableCell>-</StyledTableCell>
               <StyledTableCell>-</StyledTableCell>
               <StyledTableCell>-</StyledTableCell>
-              <StyledTableCell>-</StyledTableCell>
+              <StyledTableCell>
+              <Button
+                    
+                    onClick={handleClickOpen}
+                  >
+                    Asignar
+                  </Button>
+                  <DraggableDialog open={open} handleClose={handleClose} />
+
+              </StyledTableCell>
             </StyledTableRow>
           </TableBody>
         </Table>
