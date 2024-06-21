@@ -4,8 +4,9 @@ import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import ConsultaOrdenTrabajo from '../../components/pcp/conordentra';
 import ConsultaRegistroProd from '../../components/pcp/conregistropro';
-import ConsultaRegistroOrden from '../../components/pcp/conregistroord';
+//import ConsultaRegistroOrden from '../../components/pcp/conregistroord';
 import EnhancedTable from '../../components/pcp/a';
+import StickyHeadTable1 from '../../components/pcp/b';
 
 export default function ProgramarPage() {
   return (
@@ -23,7 +24,7 @@ export default function ProgramarPage() {
         
       <div><ConsultaOrdenTrabajo /></div>
       <h3>
-          Registro Orden de produccion
+          Registro Orden de producción
         </h3>
         
       <div><ConsultaRegistroProd /></div>
@@ -31,8 +32,10 @@ export default function ProgramarPage() {
           Registro Orden de pedido
         </h3>
         
-      <div><ConsultaRegistroOrden /></div>
+      {/*<div><ConsultaRegistroOrden /></div>*/}
       <div><EnhancedTable /></div>
+
+      <div><StickyHeadTable1 /></div>
 
      
      

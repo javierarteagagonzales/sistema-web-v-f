@@ -9,8 +9,9 @@ import {
     TableRow,
     Paper,
     Container,
-    Typography, Grid ,
-    CircularProgress,
+    //Typography, 
+    Grid ,
+    //CircularProgress,
     TablePagination,
     MenuItem,
     Select,
@@ -42,7 +43,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const LoteEntradaVista = () => {
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    //const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(15);
     const [selectedIdEntrada, setSelectedIdEntrada] = useState('');
@@ -52,11 +53,11 @@ const LoteEntradaVista = () => {
             .then(response => response.json())
             .then(data => {
                 setData(data);
-                setLoading(false);
+                //setLoading(false);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
-                setLoading(false);
+               // setLoading(false);
             });
     }, []);
 
@@ -78,7 +79,7 @@ const LoteEntradaVista = () => {
         ? data.filter(item => item.id_entrada === selectedIdEntrada)
         : data;
 
-    if (loading) {
+   /* if (loading) {
         return (
             <Container>
                 <Typography variant="h4" gutterBottom>
@@ -87,7 +88,7 @@ const LoteEntradaVista = () => {
                 <CircularProgress />
             </Container>
         );
-    }
+    }*/ 
 
     return (
         <Container>
@@ -100,8 +101,9 @@ const LoteEntradaVista = () => {
                     value={selectedIdEntrada}
                     onChange={handleChangeIdEntrada}
                     label="ID Entrada"
+                    size="small"
                 >
-                    <MenuItem value="">
+                    <MenuItem value="" >
                         <em>No Data</em>
                     </MenuItem>
                     {data.map(item => (

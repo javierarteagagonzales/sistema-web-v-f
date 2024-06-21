@@ -1,75 +1,108 @@
-// consulta de lotes
-import React from "react";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/system';
 
-// tablas
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+function createData(id, name, calories, fat, carbs, protein) {
+  return {
+    id,
+    name,
+    calories,
+    fat,
+    carbs,
+    protein,
+  };
+}
 
+const rows = [
+  createData(1, 'Cupcake', 305, 3.7, 67, 4.3, 4),
+  createData(1, 'Cupcake', 305, 3.7, 67, 4.3, 4),
+  createData(1, 'Cupcake', 305, 3.7, 67, 4.3, 4),
+  createData(1, 'Cupcake', 305, 3.7, 67, 4.3, 4),
+  createData(1, 'Cupcake', 305, 3.7, 67, 4.3, 4),
+];
 
-//estilos
-import { styled } from "@mui/material/styles";
+const headCells = [
+  { id: 'a1', numeric: false, disablePadding: true, label: 'id_orden_produccion' },
+  { id: 'a2', numeric: true, disablePadding: false, label: 'fecha_creacion' },
+  { id: 'a3', numeric: true, disablePadding: false, label: 'fecha_inicio	' },
+  { id: 'a4', numeric: true, disablePadding: false, label: 'fecha_fin' },
+  { id: 'a5', numeric: true, disablePadding: false, label: 'id_area' },
+  { id: 'a6', numeric: true, disablePadding: false, label: 'id_orden_trabajo' },
+  { id: 'a7', numeric: true, disablePadding: false, label: 'estado' },
+  { id: 'a8', numeric: true, disablePadding: false, label: 'editar' },
+];
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 9,
-  },
-}));
+function EnhancedTableHead() {
+  return (
+    <TableHead>
+      <TableRow>
+        {headCells.map((headCell) => (
+          <TableCell
+            key={headCell.id}
+            align={headCell.numeric ? 'right' : 'left'}
+            padding={headCell.disablePadding ? 'none' : 'normal'}
+            style={{ position: 'sticky', top: 0, backgroundColor: 'white', zIndex: 1 }}
+          >
+            {headCell.label}
+          </TableCell>
+        ))}
+      </TableRow>
+    </TableHead>
+  );
+}
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
-}));
+EnhancedTableHead.propTypes = {
+  numSelected: PropTypes.number,
+  onSelectAllClick: PropTypes.func,
+  rowCount: PropTypes.number,
+};
 
-export default function ConsultaRegistroProd() {
-
-
+export default function EnhancedTable() {
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    padding: '8px',
+    whiteSpace: 'nowrap',
+  }));
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ maxWidth: 450 }} size="small" aria-label="a dense table">
-        <TableHead>
-          <StyledTableRow>
-          <StyledTableCell>id_orden_produccion</StyledTableCell>
-            <StyledTableCell>fecha_creacion</StyledTableCell>
-            <StyledTableCell>fecha_inicio</StyledTableCell>
-            <StyledTableCell>fecha_fin</StyledTableCell>
-            <StyledTableCell>id_area</StyledTableCell>
-            <StyledTableCell>id_orden_trabajo</StyledTableCell>
-            <StyledTableCell>estado</StyledTableCell>
-            <StyledTableCell>editar</StyledTableCell>
-          </StyledTableRow>
-        </TableHead>
-        <TableBody>
-
-            <StyledTableRow >
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-              <StyledTableCell>--</StyledTableCell>
-
-
-            </StyledTableRow>
-
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Box sx={{ width: 900, height: 300 }}>
+      <Paper sx={{ width: '100%', height: '100%', overflow: 'auto' }}>
+        <TableContainer sx={{ maxHeight: 300 }}>
+          <Table stickyHeader size="small">
+            <EnhancedTableHead />
+            <TableBody>
+              {rows.map((row, index) => (
+                <TableRow
+                  hover
+                  role="checkbox"
+                  tabIndex={-1}
+                  key={row.id}
+                  sx={{ cursor: 'pointer' }}
+                >
+                  <StyledTableCell
+                    component="th"
+                    scope="row"
+                    padding="none"
+                  >
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">{row.calories}</StyledTableCell>
+                  <StyledTableCell align="right">{row.fat}</StyledTableCell>
+                  <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                  <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </Box>
   );
 }
