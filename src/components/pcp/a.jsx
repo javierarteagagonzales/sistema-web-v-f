@@ -13,10 +13,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
+//import IconButton from '@mui/material/IconButton';
+//import Tooltip from '@mui/material/Tooltip';
+//import DeleteIcon from '@mui/icons-material/Delete';
+//import FilterListIcon from '@mui/icons-material/FilterList';
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -144,7 +144,7 @@ function EnhancedTableToolbar(props) {
         </Typography>
       )}
 
-      {numSelected > 0 ? (
+    {/*  {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton>
             <DeleteIcon />
@@ -156,7 +156,7 @@ function EnhancedTableToolbar(props) {
             <FilterListIcon />
           </IconButton>
         </Tooltip>
-      )}
+      )}  */}
     </Toolbar>
   );
 }
@@ -216,14 +216,14 @@ export default function EnhancedTable() {
   const visibleRows = rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
+    <Box sx={{ maxWidth: 600 }}>
+      <Paper sx={{ maxwidth: 600, mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
             sx={{ maxWidth: 600 }}
             aria-labelledby="tableTitle"
-            size="medium"
+            size="small"
           >
             <EnhancedTableHead
               numSelected={selected.length}
