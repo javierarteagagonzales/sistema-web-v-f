@@ -127,9 +127,9 @@ export default function Sidenav() {
       icon: <CheckroomIcon />,
       path: '/confeccion',
       subItems: [
-        { text: 'Orden de trabajo', path: '/confeccion/orden' },
-        { text: 'Plan de confección', path: '/confeccion/plan' },
-        { text: 'Guía de confección', path: '/confeccion/guia' },
+        { text: 'Orden Confección', path: '/confeccion/orden' },
+        { text: 'Órdenes asignadas', path: '/confeccion/plan' },
+        { text: 'Registrar cantidad hecha', path: '/confeccion/guia' },
       ]
     },
     {
@@ -156,9 +156,9 @@ export default function Sidenav() {
       icon: <GradingIcon />,
       path: '/calidad',
       subItems: [
-        { text: 'Tipo 1', path: '/calidad/tipo-1' },
-        { text: 'Tipo 2', path: '/calidad/tipo-2' },
-        { text: 'Tipo 3', path: '/calidad/tipo-3' },
+        { text: 'Inspecciones', path: '/calidad/tipo-1' },
+        { text: 'Datos Inspecciones', path: '/calidad/tipo-2' },
+        { text: 'Registrar Datos', path: '/calidad/tipo-3' },
       ]
     },
     {

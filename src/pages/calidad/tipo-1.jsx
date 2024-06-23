@@ -3,6 +3,7 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import InspecCal1 from '../../components/calidad/inspeccal';
 
 export default function Tipo1Page() {
   return (
@@ -17,6 +18,11 @@ export default function Tipo1Page() {
         <Typography paragraph>
           resumen
         </Typography>
+        <h3>
+          Orden de producción
+        </h3>
+        
+      <div><InspecCal1 /></div>
       </Box>
 
     </Box>

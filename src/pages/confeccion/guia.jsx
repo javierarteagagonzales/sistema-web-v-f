@@ -3,6 +3,7 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import RegCant1 from '../../components/confeccion/regcant1';
 
 export default function GuiaPage() {
   return (
@@ -17,6 +18,11 @@ export default function GuiaPage() {
         <Typography paragraph>
           resumen
         </Typography>
+        <h3>
+          Órdenes asignadas
+        </h3>
+        
+      <div><RegCant1 /></div>
       </Box>
 
     </Box>
