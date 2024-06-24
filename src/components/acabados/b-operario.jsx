@@ -1,12 +1,24 @@
 import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 const IDDropdown = () => {
   const [idOperario, setIdOperario] = React.useState('');
 
   const handleChange = (event) => {
     setIdOperario(event.target.value);
   };
+
+//dropdown
+const [empleados, setEmpleados] = useState([]);
+
+useEffect(() => {
+    axios.get("https://sistema-web-v.onrender.com/sistema/empleados")
+        .then(response => setEmpleados(response.data))
+        .catch(error => console.error('Error fetching empleados:', error));
+}, []);
+
+
 
   return (
     <FormControl variant="outlined" fullWidth>
@@ -18,13 +30,12 @@ const IDDropdown = () => {
         onChange={handleChange}
         label="ID Operario"
       >
-        <MenuItem value="">
-          <em>None</em>
+      {empleados.map((empleado) => (
+        <MenuItem key={empleado.id_empleado} value={empleado.id_empleado}>
+        {empleado.id_empleado}
         </MenuItem>
-        <MenuItem value={10}>Operario 10</MenuItem>
-        <MenuItem value={20}>Operario 20</MenuItem>
-        <MenuItem value={30}>Operario 30</MenuItem>
-        {/* Añade más opciones según sea necesario */}
+
+      ))}
       </Select>
     </FormControl>
   );

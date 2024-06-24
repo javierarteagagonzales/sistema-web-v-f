@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState }  from "react";
+
 import Sidenav from "../../components/Sidenav";
 import Navbar from "../../components/Navbar";
 import Box from "@mui/material/Box";
@@ -13,9 +14,18 @@ import Navigation from "../../components/Navigation";
 import ListaAcabados from "../../components/acabados/AcabadoList";
 import IDDropdown from "../../components/acabados/b-operario";
 import Tacabado from "../../components/acabados/t-acabado";
+import EmpleadoSelect from "../../components/acabados/co/selecopera";
 
 
 export default function AcabadoPage() {
+//operario
+const [idOperario, setIdOperario] = useState('');
+
+const handleChange = (event) => {
+  setIdOperario(event.target.value);
+};
+
+
 
   return (
     <>
@@ -34,10 +44,14 @@ export default function AcabadoPage() {
           <Grid container spacing={3} alignItems="center" sx={{ padding: 2 }}>
             <Grid item xs={3}>
               <div>
-                <IDDropdown />
-              </div>
+                {/*<IDDropdown />*/}
+              </div><EmpleadoSelect idOperario={idOperario} handleChange={handleChange} />
             </Grid>
           </Grid>
+
+          <div>
+      
+    </div>
           <div className="App2">
             <div className="container">
               <div className="field">
