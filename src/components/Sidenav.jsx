@@ -147,6 +147,7 @@ export default function Sidenav() {
       icon: <EngineeringIcon />,
       path: '/acabados',
       subItems: [
+        { text: 'General', path: '/acabados' },
         { text: 'Lotes', path: '/acabados/lotes' },
         { text: 'Acabados', path: '/acabados/acabados' },
       ]

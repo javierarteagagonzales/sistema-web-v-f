@@ -9,6 +9,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "../Dash.css";
 import Garea from "../components/garea";
+import EmpleadosList from "../components/acabados/operario";
 export default function A5() {
   return (
     <>
@@ -21,8 +22,8 @@ export default function A5() {
           <h1>Área de Acabados</h1>
           <Typography paragraph>Bienvenido al área estimado Usuario</Typography>
 
-          <Grid container spacing={2} className="acabadoc">
-            <Grid>
+          <Grid container spacing={2} >
+            <Grid item xs={8} className="acabadoc">
               <Stack spacing={4}>
                 <Card sx={{ maxWidth: 345 }}>
                   <CardContent className="card1">
@@ -38,9 +39,16 @@ export default function A5() {
                   </CardContent>
                 </Card>
               </Stack>
+              <Garea />
             </Grid>
+            <Grid item xs={4}>
+              <Stack spacing={4}>
+              <h3>Operarios:</h3>
+              <EmpleadosList />
+              </Stack>
+              </Grid>
           </Grid>
-          <Garea />
+          
         </Box>
       </Box>
     </>
