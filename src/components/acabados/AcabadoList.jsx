@@ -21,7 +21,6 @@ const AcabadoList = () => {
 
   return (
     <div>
-      <h2>Listado de Acabados</h2>
       <ul>
         {acabados.map(acabado => (
           <li key={acabado.id_acabado}>{acabado.nombre}</li>

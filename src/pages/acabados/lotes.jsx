@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 //import DenseTable1 from "../../components/acabados/tabla-aca";
 
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
-import LoteEntradaVista from "../../components/acabados/LoteEntradaVista";
+//import LoteEntradaVista from "../../components/acabados/LoteEntradaVista";
 import CajaPrendaList from "../../components/acabados/cajalista";
 
 export default function LotesPage() {
@@ -49,7 +49,7 @@ export default function LotesPage() {
                 <Navigation />{" "}
               </div>
 
-              <div className="App2">
+              {/*<div className="App2">
                 <div className="container">
                   <div className="field">
                     <label>Id Operario:</label>

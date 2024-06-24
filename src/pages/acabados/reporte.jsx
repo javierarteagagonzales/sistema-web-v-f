@@ -1,23 +1,20 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Sidenav from "../../components/Sidenav";
 import Navbar from "../../components/Navbar";
-import { Button, Box } from "@mui/material";
+import { Button, Box, TextField, Grid } from "@mui/material";
 import DraggableDialog from "../../components/acabados/popupimp";
-
-
-//navegation
 import Navigation from "../../components/Navigation";
 import TablaReporte from "../../components/acabados/tabla-reporte";
-
 import Bot from "../../components/acabados/bot";
-
-import { TextField, Grid } from "@mui/material";
-import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
+import SkeletonLoader from "../SkeletonLoader";
+import axios from 'axios';
 
 export default function Reporte() {
-  /* popup */
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,15 +23,23 @@ export default function Reporte() {
   const handleClose = () => {
     setOpen(false);
   };
-  //Skeleton
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simula la carga de datos
     setTimeout(() => {
       setLoading(false);
-    }, 1500); // Tiempo de espera simulado de 3 segundos
+    }, 1500);
   }, []);
+
+  const handleBuscar = async () => {
+    try {
+      const response = await axios.get('https://sistema-web-v.onrender.com/sistema/acabadoreporte', {
+        params: { date_start: startDate, date_end: endDate }
+      });
+      setData(response.data);
+    } catch (error) {
+      console.error('Error al buscar datos:', error);
+    }
+  };
 
   return (
     <>
@@ -45,7 +50,7 @@ export default function Reporte() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {loading ? (
-            <SkeletonLoader /> // Mostrar el skeleton mientras se cargan los datos
+            <SkeletonLoader />
           ) : (
             <>
               <h1>Área de Acabados</h1>
@@ -53,21 +58,15 @@ export default function Reporte() {
                 <Navigation />
               </div>
 
-              <Grid
-                container
-                spacing={3}
-                alignItems="center"
-                sx={{ padding: 2 }}
-              >
+              <Grid container spacing={3} alignItems="center" sx={{ padding: 2 }}>
                 <Grid item xs={3}>
                   <TextField
                     id="date-start"
                     label="Fecha inicio"
                     type="date"
-                    defaultValue=""
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
+                    InputLabelProps={{ shrink: true }}
                     fullWidth
                   />
                 </Grid>
@@ -76,10 +75,9 @@ export default function Reporte() {
                     id="date-end"
                     label="Fecha fin"
                     type="date"
-                    defaultValue=""
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
+                    value={endDate}
+                    onChange={(e) => setEndDate(e.target.value)}
+                    InputLabelProps={{ shrink: true }}
                     fullWidth
                   />
                 </Grid>
@@ -87,6 +85,7 @@ export default function Reporte() {
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: "#881C62", color: "white" }}
+                    onClick={handleBuscar}
                   >
                     Buscar
                   </Button>
@@ -106,7 +105,7 @@ export default function Reporte() {
                 </Grid>
               </Grid>
               <Box>
-                <TablaReporte />
+                <TablaReporte data={data} />
               </Box>
             </>
           )}
