@@ -54,6 +54,7 @@ import ProgramarPage from './pages/pcp/programar';
 import Transito1Page from './pages/transito/1';
 import Transito2Page from './pages/transito/2';
 import Transito3Page from './pages/transito/3';
+import CajaPrendaDetail from './components/acabados/CajaPrendaDetail'
 
 
 
@@ -75,6 +76,7 @@ export default function App() {
           {/* Acabados */}
           <Route path="/acabados/acabados" element={<AcabadoPage />} />
           <Route path="/acabados/lotes" element={<LotesPage />} />
+          <Route path="/cajas/:id_caja" element={<CajaPrendaDetail />} />
           <Route path="/acabados/lotes/reporte" element={<Reporte />} />
           <Route path="/acabados/lotes/detalle" element={<Detalle />} />
           <Route path="/acabados/acabados/caja-operario" element={<CajaOp />} />

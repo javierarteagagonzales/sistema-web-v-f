@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 import SkeletonLoader from "../SkeletonLoader"; // Importar el componente de skeleton
 import LoteEntradaVista from "../../components/acabados/LoteEntradaVista";
+import CajaPrendaList from "../../components/acabados/cajalista";
 
 export default function LotesPage() {
   //Skeleton
@@ -83,7 +84,9 @@ export default function LotesPage() {
               <div>
                 <DenseTable1 />{" "}
               </div>*/}
-              
+              <div>
+                <CajaPrendaList/>
+              </div>
 
               <div>
                 <Box display="flex" justifyContent="flex-end" mt={2}>
