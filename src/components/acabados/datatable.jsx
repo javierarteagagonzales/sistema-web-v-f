@@ -28,7 +28,7 @@ const DataTable = () => {
       <Typography variant="p" gutterBottom>
         10 registros recientes de actividad en el área.
       </Typography>
-      <div style={{ height: 400, width: '100%' }}>
+      <div style={{ height: 300, width: '70%' }}>
         <DataGrid
           rows={rows}
           columns={columns}

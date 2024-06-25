@@ -33,7 +33,7 @@ const CajaPrendaList = () => {
   };
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 300, width: '80%' }}>
       <DataGrid
         rows={cajas}
         columns={columns}
