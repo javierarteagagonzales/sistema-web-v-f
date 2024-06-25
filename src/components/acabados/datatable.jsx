@@ -25,8 +25,8 @@ const DataTable = () => {
 
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>
-        Datos de Transformación de Cajas
+      <Typography variant="p" gutterBottom>
+        10 registros recientes de actividad en el área.
       </Typography>
       <div style={{ height: 400, width: '100%' }}>
         <DataGrid
@@ -34,6 +34,7 @@ const DataTable = () => {
           columns={columns}
           pageSize={10}
           getRowId={(row) => row.id}  // Usa el campo 'id' único
+          density="compact"
         />
       </div>
     </Container>
