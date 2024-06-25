@@ -7,7 +7,7 @@ import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import "../Dash.css";
+//import "../Dash.css";
 //import Garea from "../components/garea";
 import EmpleadosList from "../components/acabados/operario";
 import GareaAca from "../components/acabados/co/garea-acab";
@@ -25,7 +25,7 @@ export default function A5() {
 
           <Grid container spacing={1} >
             <Grid item xs={8} className="acabadoc">
-              <Stack spacing={2}>
+              <Stack spacing={1}>
                 <Card sx={{ maxWidth: 500 }}>
                   <CardContent className="card1">
                     <Stack spacing={1} direction="row">

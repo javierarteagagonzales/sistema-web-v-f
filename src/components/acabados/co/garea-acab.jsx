@@ -5,11 +5,11 @@ import ListaAcabados from "../AcabadoList";
 
 const GareaAca = () => {
   return (
-    <Box className="nos-container" sx={{ padding: 8, backgroundColor: '#f0f0f0', borderRadius: 2, boxShadow: 3, maxWidth: '95%', margin: '0 auto' }}>
-  <Typography variant="h4" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-    Datos generales
+    <Box className="nos-container" sx={{ padding: 3, backgroundColor: '#f0f0f0', borderRadius: 2, boxShadow: 3, maxWidth: '95%', margin: '0 auto' }}>
+  <Typography variant="h3" component="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+    Nuestros acabados:
   </Typography>
-  <Box component="section" mb={2}>
+  <Box component="section">
     
     <div className="App">
             <ListaAcabados />
