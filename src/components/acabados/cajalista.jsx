@@ -39,6 +39,7 @@ const CajaPrendaList = () => {
         columns={columns}
         pageSize={5}
         onRowClick={handleRowClick}
+        density="compact"
       />
     </div>
   );
