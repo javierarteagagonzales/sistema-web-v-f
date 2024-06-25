@@ -1,4 +1,3 @@
-// src/components/CajaPrendaList.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
@@ -10,7 +9,14 @@ const CajaPrendaList = () => {
 
   useEffect(() => {
     axios.get('https://sistema-web-v.onrender.com/sistema/cajas')
-      .then(response => setCajas(response.data))
+      .then(response => {
+        // Add an id field to each row by mapping id_caja to id
+        const dataWithId = response.data.map((row) => ({
+          ...row,
+          id: row.id_caja,
+        }));
+        setCajas(dataWithId);
+      })
       .catch(error => console.error(error));
   }, []);
 

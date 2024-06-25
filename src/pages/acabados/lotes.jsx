@@ -83,13 +83,13 @@ export default function LotesPage() {
               </div>
               <div>
                 <DenseTable1 />{" "}
-              </div>
+              </div>*/}
 
 
               
               <div>
                 <CajaPrendaList/>
-              </div>*/}
+              </div>
 
               <div>
                 <Box display="flex" justifyContent="flex-end" mt={2}>
