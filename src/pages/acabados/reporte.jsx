@@ -33,7 +33,7 @@ export default function Reporte() {
   const handleBuscar = async () => {
     try {
       const response = await axios.get('https://sistema-web-v.onrender.com/sistema/acabadoreporte', {
-        params: { date_start: startDate, date_end: endDate }
+        params: { fecha_inicio: startDate, fecha_fin: endDate }
       });
       setData(response.data);
     } catch (error) {

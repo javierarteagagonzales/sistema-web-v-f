@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { tableCellClasses } from '@mui/material/TableCell'; // Importa tableCellClasses
+import { tableCellClasses } from '@mui/material/TableCell';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -52,7 +52,7 @@ export default function TablaReporte({ data }) {
               <StyledTableCell>{row.id_cargo}</StyledTableCell>
               <StyledTableCell>{row.id_caja}</StyledTableCell>
               <StyledTableCell>{row.fecha_creacion}</StyledTableCell>
-              <StyledTableCell>{row.nombre}</StyledTableCell>
+              <StyledTableCell>{row.tipo_prenda}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -60,4 +60,3 @@ export default function TablaReporte({ data }) {
     </TableContainer>
   );
 }
-
