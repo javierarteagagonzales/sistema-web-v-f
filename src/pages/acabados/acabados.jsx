@@ -5,6 +5,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import Sidenav from "../../components/Sidenav";
 import Navbar from "../../components/Navbar";
 import Navigation from "../../components/Navigation";
+import DataTable from '../../components/acabados/datatable';
 
 export default function AcabadoPage() {
   const [empleados, setEmpleados] = useState([]);
@@ -82,6 +83,8 @@ export default function AcabadoPage() {
               />
             </div>
           </Box>
+          <h3>Registro de actividad</h3>
+          <DataTable />
         </Box>
       </Box>
     </>
