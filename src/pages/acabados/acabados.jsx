@@ -7,7 +7,11 @@ import Navbar from "../../components/Navbar";
 import Navigation from "../../components/Navigation";
 import DataTable from "../../components/acabados/datatable";
 import CajaSalidaTable from "../../components/acabados/co/cajasalidal";
-
+import ImageTooltip from "../../components/acabados/co/image";
+// Importar las imágenes
+import imagen1 from '../../image/cajasalida.png';
+import imagen2 from '../../image/image2.png';
+import imagen3 from '../../image/datos_list_a.png';
 export default function AcabadoPage() {
   const [empleados, setEmpleados] = useState([]);
   const [selectedEmpleado, setSelectedEmpleado] = useState("");
@@ -84,16 +88,19 @@ export default function AcabadoPage() {
             </Grid>
           </Grid>
           <p>Ver detalle de cajas por Operario en el sistema.</p>
+          <ImageTooltip imageUrl={imagen3} />
           <Box mt={3} width={1000}>
             <div style={{ height: 400, width: "100%" }}>
               <DataGrid rows={datos} columns={columns} pageSize={5} />
             </div>
           </Box>
           <h3>Registro de actividad</h3>
+          <ImageTooltip imageUrl={imagen2} />
           <DataTable />
 
           <div className="App">
             <h3>Caja Salida Data</h3>
+            <ImageTooltip imageUrl={imagen1} />
             <p>Salida de cajas del área.</p>
             <CajaSalidaTable />
           </div>

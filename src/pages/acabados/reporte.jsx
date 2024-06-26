@@ -8,7 +8,8 @@ import TablaReporte from "../../components/acabados/tabla-reporte";
 import Bot from "../../components/acabados/bot";
 import SkeletonLoader from "../SkeletonLoader";
 import axios from 'axios';
-
+import ImageTooltip from "../../components/acabados/co/image";
+import imagen5 from '../../image/reporteacabados.png';
 export default function Reporte() {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -104,6 +105,7 @@ export default function Reporte() {
                   <Bot />
                 </Grid>
               </Grid>
+              <ImageTooltip imageUrl={imagen5} />
               <Box>
                 <TablaReporte data={data} />
               </Box>

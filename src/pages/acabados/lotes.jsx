@@ -7,6 +7,8 @@ import { Button } from "@mui/material";
 //navegation
 import Navigation from "../../components/Navigation";
 import { useNavigate } from "react-router-dom";
+import ImageTooltip from "../../components/acabados/co/image";
+import imagen4 from '../../image/cajaprenda.png';
 
 //import DenseTable from "../../components/acabados/tabla-et";
 //import DenseTable1 from "../../components/acabados/tabla-aca";
@@ -86,7 +88,7 @@ export default function LotesPage() {
               </div>*/}
 
 
-              
+              <ImageTooltip imageUrl={imagen4} />
               <div>
                 <CajaPrendaList/>
               </div>
