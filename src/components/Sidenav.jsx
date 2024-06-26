@@ -156,8 +156,8 @@ export default function Sidenav() {
       path: '/calidad',
       subItems: [
         { text: 'Inspecciones', path: '/calidad/tipo-1' },
-        { text: 'Datos Inspecciones', path: '/calidad/tipo-2' },
-        { text: 'Registrar Datos', path: '/calidad/tipo-3' },
+       /* { text: 'Datos Inspecciones', path: '/calidad/tipo-2' },
+        { text: 'Registrar Datos', path: '/calidad/tipo-3' },*/
       ]
     },
     {

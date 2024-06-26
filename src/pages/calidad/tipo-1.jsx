@@ -3,7 +3,8 @@ import Sidenav from '../../components/Sidenav'
 import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import InspecCal1 from '../../components/calidad/inspeccal';
+//import InspecCal1 from '../../components/calidad/inspeccal';
+import CalidadInspecc from '../../components/calidad/inspecciones';
 
 export default function Tipo1Page() {
   return (
@@ -14,7 +15,7 @@ export default function Tipo1Page() {
       <Sidenav/>
       
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-       <h1>Área de Almacén Central</h1> 
+       <h1>Área de Inspección de Calidad</h1> 
         <Typography paragraph>
           resumen
         </Typography>
@@ -22,7 +23,8 @@ export default function Tipo1Page() {
           Orden de producción
         </h3>
         
-      <div><InspecCal1 /></div>
+      <div>{/*<InspecCal1 />*/}
+      <CalidadInspecc /></div>
       </Box>
 
     </Box>
