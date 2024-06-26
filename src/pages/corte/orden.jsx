@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 //navegation
 import Navigation from "../../components/Navigation";
 import Tabla from "../../components/corte/tabla";
+import OrdenesTable1 from '../../components/corte/pantalla1';
+import App1 from '../../components/corte/pantalla1';
 
 export default function OrdenCortePage() {
   return (
@@ -20,9 +22,13 @@ export default function OrdenCortePage() {
             <Navigation />{" "}
           </div>
         <h3>Orden de producción</h3>
-        <Tabla />
+        {/*<Tabla />*/}
+        <Box><App1 /></Box>
+        
       </Box>
 
+
+      
     </Box>
       
     

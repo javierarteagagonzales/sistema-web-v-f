@@ -137,9 +137,7 @@ export default function Sidenav() {
       icon: <DirectionsTransitIcon />,
       path: '/transito',
       subItems: [
-        { text: '1', path: '/transito/1' },
-        { text: '2', path: '/transito/2' },
-        { text: '3', path: '/transito/3' },
+        { text: 'Recepciones', path: '/transito/1' },
       ]
     },
     {
