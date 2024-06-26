@@ -93,10 +93,10 @@ export default function Sidenav() {
       icon: <InventoryIcon />,
       path: '/almacencentral',
       subItems: [
-        { text: 'Resumen', path: '/almacencentral/resumen' },
-        { text: 'Solicitud', path: '/almacencentral/solicitud' },
-        { text: 'Estado', path: '/almacencentral/estado' },
-        { text: 'Estado inventario', path: '/almacencentral/estado-inv' },
+       // { text: 'Resumen', path: '/almacencentral/resumen' },
+        //{ text: 'Solicitud', path: '/almacencentral/solicitud' },
+        { text: 'Consultas', path: '/almacencentral/estado' },
+        //{ text: 'Estado inventario', path: '/almacencentral/estado-inv' },
       ]
     },
     {

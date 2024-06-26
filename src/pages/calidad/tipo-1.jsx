@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 //import InspecCal1 from '../../components/calidad/inspeccal';
 import CalidadInspecc from '../../components/calidad/inspecciones';
+import TuComponente from '../../components/calidad/inscal3';
 
 export default function Tipo1Page() {
   return (
@@ -24,7 +25,8 @@ export default function Tipo1Page() {
         </h3>
         
       <div>{/*<InspecCal1 />*/}
-      <CalidadInspecc /></div>
+      <TuComponente/></div>
+
       </Box>
 
     </Box>
