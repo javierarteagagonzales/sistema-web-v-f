@@ -9,11 +9,11 @@ const CalidadInspecc = () => {
   const [selectedOrden, setSelectedOrden] = useState('');
 
   useEffect(() => {
-    fetch('https://sistema-web-v.onrender.com/sistema/inspecciones/')
+    fetch('https://sistema-web-v.onrender.com/sistema/inspeccionescal/')
       .then(response => response.json())
       .then(data => setInspecciones(data));
 
-    fetch('https://sistema-web-v.onrender.com/sistema/ordenes-produccion-cal/')
+    fetch('https://sistema-web-v.onrender.com/sistema/ordenes-produccioncal/')
       .then(response => response.json())
       .then(data => setOrdenesProduccion(data));
   }, []);
@@ -22,7 +22,7 @@ const CalidadInspecc = () => {
     const selectedValue = event.target.value;
     setSelectedOrden(selectedValue);
 
-    fetch(`https://sistema-web-v.onrender.com/sistema/inspecciones/?orden=${selectedValue}`)
+    fetch(`https://sistema-web-v.onrender.com/sistema/inspeccionescal/?orden=${selectedValue}`)
       .then(response => response.json())
       .then(data => setInspecciones(data));
   };
