@@ -4,8 +4,8 @@ import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 //navegation
 import Navigation from "../../components/Navigation";
-import Tabla from "../../components/corte/tabla";
-import OrdenesTable1 from '../../components/corte/pantalla1';
+//import Tabla from "../../components/corte/tabla";
+//import OrdenesTable1 from '../../components/corte/pantalla1';
 import App1 from '../../components/corte/pantalla1';
 
 export default function OrdenCortePage() {

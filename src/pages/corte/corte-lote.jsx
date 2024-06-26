@@ -4,7 +4,8 @@ import Navbar from "../../components/Navbar";
 import Box from "@mui/material/Box";
 //navegation
 import Navigation from "../../components/Navigation";
-import TablaCorteLote from "../../components/corte/tablacortelote";
+//import TablaCorteLote from "../../components/corte/tablacortelote";
+import InsertDataTableC from "../../components/corte/comp/insertar";
 
 export default function OrdenCortePage() {
   return (
@@ -20,7 +21,8 @@ export default function OrdenCortePage() {
             <Navigation />
           </div>
           <h3>Orden de producción</h3>
-          <TablaCorteLote />
+          {/*<TablaCorteLote />*/}
+          <InsertDataTableC />
         </Box>
       </Box>
     </>
