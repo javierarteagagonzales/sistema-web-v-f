@@ -24,8 +24,8 @@ export default function Tipo1Page() {
           Orden de producción
         </h3>
         
-      <div>{/*<InspecCal1 />*/}
-      <TuComponente/></div>
+      <div>{/*<InspecCal1 />
+      <TuComponente/>*/}</div>
 
       </Box>
 
