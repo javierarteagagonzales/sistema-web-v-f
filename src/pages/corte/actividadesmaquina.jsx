@@ -4,7 +4,8 @@ import Navbar from '../../components/Navbar'
 import Box from '@mui/material/Box';
 //navegation
 import Navigation from "../../components/Navigation";
-import TablaActMaq from "../../components/corte/tablaactmaq";
+//import TablaActMaq from "../../components/corte/tablaactmaq";
+import ActivitiesTable from '../../components/corte/comp/tablaactividad';
 
 export default function OrdenCortePage() {
   return (
@@ -20,7 +21,8 @@ export default function OrdenCortePage() {
             <Navigation />{" "}
           </div>
         <h3>Actividades diarias por máquina</h3>
-        <TablaActMaq />
+        {/*<TablaActMaq />*/}
+        <ActivitiesTable/>
       </Box>
 
     </Box>
