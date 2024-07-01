@@ -1,3 +1,5 @@
+/* PROYECTO VIRCATEX
+Autor: Javier Arteaga */
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { Grid, MenuItem, Select, FormControl, InputLabel } from "@mui/material";
