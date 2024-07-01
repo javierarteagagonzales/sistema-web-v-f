@@ -1,3 +1,6 @@
+/* PROYECTO VIRCATEX
+Autor: Javier Arteaga */
+
 import React from 'react'
 import {Routes, Route, HashRouter} from "react-router-dom"
 import Home from "./pages/Home"
