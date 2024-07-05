@@ -21,7 +21,7 @@ export default function Home() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <h1>Home</h1>
-          <Typography paragraph>Bienvenido al sistema Usuario</Typography>
+          <Typography paragraph>Bienvenido al sistema Usuario. NOTA: Esperar unos segundos para que cargue la base de datos desde Render. Módulos COMPLETADOS Acabados y Corte</Typography>
 
           <Grid container spacing={2}>
             <Grid item xs={8}>
